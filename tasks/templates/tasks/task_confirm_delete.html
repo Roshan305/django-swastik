@@ -2,11 +2,11 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="text-primary fw-bold mb-4">Task Form</h2>
+    <h3 class="text-danger">Confirm Delete</h3>
+    <p>Are you sure you want to delete the task: <strong>{{ task.title }}</strong>?</p>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
         <a href="{% url 'task-list' %}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
